@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { detailProjects, findProject } from '../data/projects.js';
-import { useActiveSection, useCountUp, useInView, useScrollProgress } from '../hooks/index.js';
+import { useActiveSection, useCountUp, useInView, useScrollProgressRef } from '../hooks/index.js';
 import Reveal from '../components/Reveal.jsx';
 import Footer from '../components/Footer.jsx';
 import Home from './Home.jsx';
@@ -81,7 +81,7 @@ function SecTitle({ no, children, sub }) {
 export default function ProjectPage() {
   const { id } = useParams();
   const p = findProject(id);
-  const progress = useScrollProgress();
+  const progressRef = useScrollProgressRef();
   const active = useActiveSection(SECTIONS.map((s) => s[0]));
   const [lb, setLb] = useState(null);
 
@@ -97,7 +97,7 @@ export default function ProjectPage() {
 
   return (
     <main className="project" style={{ '--accent': p.accent, '--g0': p.gradient[0], '--g1': p.gradient[1], '--g2': p.gradient[2], '--glow1': p.glow[0], '--glow2': p.glow[1] }}>
-      <div className="read-progress" style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
+      <div ref={progressRef} className="read-progress" aria-hidden="true" />
 
       <header className="cover">
         <div className="cover-shade" aria-hidden="true" />

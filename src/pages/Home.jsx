@@ -32,8 +32,7 @@ export default function Home() {
               <h3>About<span>기본정보</span></h3>
               <div className="info-basic">
                 {profile.photo
-                  ? <img className="id-photo" src={profile.photo} alt={`${profile.name} 사진`} />
-                  : <div className="id-photo is-empty" role="img" aria-label="증명사진 자리">사진</div>}
+                  ? <img className="id-photo" src={profile.photo} alt={`${profile.name} 사진`} draggable="false" onContextMenu={(e) => e.preventDefault()} />                  : <div className="id-photo is-empty" role="img" aria-label="증명사진 자리">사진</div>}
                 <div>{profile.info.basic.map((t) => <p key={t}>{t}</p>)}</div>
               </div>
             </div>

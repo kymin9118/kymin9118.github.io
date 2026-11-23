@@ -109,9 +109,7 @@ export default function HeroCarousel() {
       style={{ background }}
       aria-roledescription="carousel"
       aria-label="대표 프로젝트"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocus={() => setPaused(true)}
+      onFocus={(e) => { if (e.target.matches(':focus-visible')) setPaused(true); }}
       onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setPaused(false); }}
       onKeyDown={(e) => { if (e.target.tagName === 'INPUT') return; if (e.key === 'ArrowRight') next(); if (e.key === 'ArrowLeft') prev(); }}
       onPointerDown={onDragStart}

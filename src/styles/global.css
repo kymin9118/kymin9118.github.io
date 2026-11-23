@@ -97,7 +97,7 @@ img { display: block; max-width: 100%; }
 .hero-carousel::after, .cover::after { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: .08; mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 .orbs { position: absolute; inset: 0; pointer-events: none; z-index: -1; }
-.orbs span { position: absolute; border-radius: 50%; filter: blur(90px); mix-blend-mode: screen; opacity: .18; animation: drift 22s ease-in-out infinite alternate; }
+.orbs span { position: absolute; border-radius: 50%; mix-blend-mode: screen; opacity: .18; will-change: transform; animation: drift 22s ease-in-out infinite alternate; }
 .orbs span:nth-child(1) { width: 760px; height: 760px; top: -22%; left: -14%; background: radial-gradient(circle, rgba(255,255,255,.34), transparent 70%); }
 .orbs span:nth-child(2) { width: 560px; height: 560px; bottom: -20%; right: -10%; background: radial-gradient(circle, rgba(255,255,255,.26), transparent 70%); animation-delay: -11s; }
 @keyframes drift { to { transform: translate(40px, 60px) scale(1.06); } }
@@ -236,9 +236,10 @@ img { display: block; max-width: 100%; }
 .home { position: relative; isolation: isolate; }
 :root[data-theme="dark"] .home > section:not(.hero-carousel) { background: transparent; }
 :root[data-theme="dark"] .home { background:
-  radial-gradient(1200px 900px at 100% 0%, rgba(240, 102, 26, .22), transparent 60%),
-  radial-gradient(1000px 800px at 0% 40%, rgba(255, 150, 40, .10), transparent 60%),
-  radial-gradient(1200px 900px at 100% 75%, rgba(240, 102, 26, .12), transparent 60%),
+  radial-gradient(1100px 800px at 96% 1520px, rgba(130, 115, 210, .17), transparent 62%),
+  radial-gradient(1000px 800px at 2% 2550px, rgba(255, 150, 40, .20), transparent 62%),
+  radial-gradient(1100px 800px at 98% 3450px, rgba(242, 169, 0, .14), transparent 62%),
+  radial-gradient(900px 600px at 10% 100%, rgba(255, 150, 40, .14), transparent 62%),
   #0B0A0D; }
 :root[data-theme="dark"] { --paper: #0B0A0D; --sheet: #141218; --card: #17151B; --rule: #2A2630; }
 .about { background: var(--paper); color: var(--ink); padding: 120px 0 20px; }
@@ -364,7 +365,7 @@ img { display: block; max-width: 100%; }
 /* =========================================================
    상세 페이지
    ========================================================= */
-.read-progress { position: fixed; top: 0; left: 0; right: 0; height: 4px; background: var(--accent); transform-origin: 0 50%; z-index: 60; }
+.read-progress { position: fixed; top: 0; left: 0; right: 0; height: 4px; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; z-index: 60; }
 .p-hero { background: linear-gradient(135deg, var(--g0), var(--g1)); color: #fff; padding: 140px 0 80px; overflow: hidden; }
 :root[data-theme="dark"] .p-hero { background: linear-gradient(135deg, #070A0F, var(--g2)); }
 .p-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 480px); gap: 56px; align-items: center; }
@@ -511,7 +512,7 @@ img { display: block; max-width: 100%; }
 
 /* ---------- 상세: 커버 ---------- */
 .cover { position: relative; min-height: 100svh; color: #fff; overflow: hidden; display: flex; background: #0C0E12; }
-.cover-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top left; filter: blur(1.5px) saturate(.85); transform: scale(1.1); animation: cover-zoom 16s var(--ease) forwards; }
+.cover-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top left; filter: blur(1.5px) saturate(.85); transform: scale(1.1); will-change: transform; animation: cover-zoom 16s var(--ease) forwards; }
 @keyframes cover-zoom { to { transform: scale(1.02); } }
 .cover { background: radial-gradient(1300px 900px at 92% -12%, rgba(var(--glow1), .85), transparent 60%), radial-gradient(1000px 700px at -8% 112%, rgba(var(--glow2), .38), transparent 62%), #0B0A0D; }
 .cover .cover-peek.frame { position: absolute; right: -4%; top: 16%; width: min(34vw, 600px); padding-top: 26px; transform: rotate(-5deg); opacity: .3; box-shadow: 0 40px 90px -30px rgba(0,0,0,.7); animation: peek-in 1.2s .2s var(--ease) both; }
@@ -711,9 +712,23 @@ button.frame:hover { transform: translateY(-6px); }
 :root[data-theme="light"] .input-chip { color: var(--ink); background: rgba(255,255,255,.7); border-color: color-mix(in srgb, var(--ink) 12%, transparent); }
 :root[data-theme="light"] .pill-header:not(.is-solid) { color: var(--ink); background: rgba(255,255,255,.55); border-color: color-mix(in srgb, var(--ink) 10%, transparent); }
 :root[data-theme="light"] .home { background:
-  radial-gradient(1200px 900px at 100% 0%, rgba(240, 102, 26, .10), transparent 60%),
-  radial-gradient(1000px 800px at 0% 45%, rgba(255, 150, 40, .07), transparent 60%),
+  radial-gradient(1100px 800px at 96% 1520px, rgba(240, 102, 26, .14), transparent 62%),
+  radial-gradient(1000px 800px at 2% 2550px, rgba(255, 150, 40, .10), transparent 62%),
+  radial-gradient(1100px 800px at 98% 3450px, rgba(240, 102, 26, .11), transparent 62%),
+  radial-gradient(900px 600px at 10% 100%, rgba(255, 150, 40, .08), transparent 62%),
   var(--paper); }
 :root[data-theme="light"] .home > section:not(.hero-carousel) { background: transparent; }
 :root[data-theme="light"] .hc-curve { display: none; }
 :root[data-theme="light"] .hero-carousel::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 160px; z-index: 0; pointer-events: none; background: linear-gradient(180deg, transparent, var(--paper)); }
+/* 프로필 사진 저장 방지 */
+img.id-photo { -webkit-user-drag: none; user-select: none; -webkit-touch-callout: none; }
+/* 상세 페이지 다크모드: 색 있는 구간이 위아래 경계에서 툭 끊기지 않고 바탕색으로 스며들게 */
+:root[data-theme="dark"] .ps { background:
+  linear-gradient(180deg, var(--paper) 0, transparent 240px, transparent calc(100% - 240px), var(--paper) 100%),
+  radial-gradient(1000px 700px at 12% 24%, rgba(var(--glow1), .45), transparent 62%),
+  radial-gradient(900px 600px at 100% 76%, rgba(var(--glow2), .2), transparent 60%),
+  var(--paper); }
+:root[data-theme="dark"] .p-dark { background:
+  linear-gradient(180deg, var(--paper) 0, transparent 240px, transparent calc(100% - 240px), var(--paper) 100%),
+  radial-gradient(1200px 800px at 88% 62%, color-mix(in srgb, var(--g2) 60%, transparent), transparent 66%),
+  var(--paper); }
