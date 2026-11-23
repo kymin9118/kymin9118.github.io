@@ -1,4 +1,4 @@
-import photo from '../assets/profile.jpeg';
+import photo from '../assets/profile-sm.jpg';
 
 export const profile = {
   name: '김영민',
@@ -8,7 +8,7 @@ export const profile = {
   // 공개해도 되는 연락용 이메일이 있으면 적으세요. 비워 두면 Contact에 나오지 않습니다.
   email: 'kymin9118@gmail.com',
   headline: ['반복되는 확인은 시스템이,', '판단이 필요한 순간은 사람이.'],
-  // 증명사진: src/assets/profile.jpg 를 넣고 파일 맨 위에 `import photo from '../assets/profile.jpg';`를 추가한 뒤 photo: photo 로 바꾸세요.
+  // 증명사진: src/assets/profile.jpg 를 넣고 파일 맨 위에 `import photo from '../assets/profile-sm.jpg';`를 추가한 뒤 photo: photo 로 바꾸세요.
   photo: photo,
   // 일하는 방식: [키워드, 설명, 결과 키워드, 결과 설명, 배경 이미지 키]
   principles: [
