@@ -1,13 +1,15 @@
+import photo from '../assets/profile.jpeg';
+
 export const profile = {
   name: '김영민',
   nameEn: 'YOUNGMIN.KIM',
   role: '백엔드 개발자',
   github: 'https://github.com/kymin9118',
   // 공개해도 되는 연락용 이메일이 있으면 적으세요. 비워 두면 Contact에 나오지 않습니다.
-  email: '',
+  email: 'kymin9118@gmail.com',
   headline: ['반복되는 확인은 시스템이,', '판단이 필요한 순간은 사람이.'],
   // 증명사진: src/assets/profile.jpg 를 넣고 파일 맨 위에 `import photo from '../assets/profile.jpg';`를 추가한 뒤 photo: photo 로 바꾸세요.
-  photo: null,
+  photo: photo,
   // 일하는 방식: [키워드, 설명, 결과 키워드, 결과 설명, 배경 이미지 키]
   principles: [
     ['규칙은 코드로', '매번 사람이 대조하던 기준을 서버로', '같은 입력, 같은 결과', '웹과 AI가 같은 판정을 씀', 'permit'],
@@ -16,8 +18,11 @@ export const profile = {
   ],
   // About 오른쪽 정보 칸. example: true 는 '예시' 표시
   info: {
-    basic: ['김영민', 'YOUNGMIN.KIM', 'github.com/kymin9118'],
-    education: [{ title: '○○대학교 ○○학과', sub: '재학', example: true }],
+    basic: ['김영민', 'YOUNGMIN.KIM', 'github.com/kymin9118', 'kymin9118@gmail.com'],
+        education: [
+      { title: '서울디지털대학교 AI소프트웨어학과', sub: '2026.09 – 2028.09 · 재학 중' },
+      { title: '학점은행제 컴퓨터공학 학사', sub: '국가평생교육진흥원 · 2024.04 – 2027.02 · 졸업예정' },
+    ],
     activities: [
       { title: '산업현장 안전관리 AI', sub: '서버 · 작업허가 · 문장/음성 입력 | 2026.10 – 11' },
       { title: 'PDF OCR 문서 아카이브', sub: '백엔드 | 2026' },
@@ -36,8 +41,12 @@ export const profile = {
 
 // 자격증: 이 배열에 추가하면 화면에 바로 나옵니다. 6칸 기준으로 빈 자리는 자동으로 채워집니다. example: true 는 '예시' 표시가 붙습니다.
 export const certificates = [
-  { name: '정보처리기사', org: '한국산업인력공단', date: '2026. 00.', example: true },
-  { name: 'SQLD', org: '한국데이터산업진흥원', date: '2026. 00.', example: true },
+  { name: '정보처리기사', org: '한국산업인력공단', date: '2026. 12. (예정)' },
+  { name: '빅데이터분석기사', org: '한국데이터산업진흥원', date: '2026. 12. (예정)' },
+  { name: 'SQL개발자 (SQLD)', org: '한국데이터산업진흥원', date: '2026. 03.' },
+  { name: '컴퓨터활용능력 1급', org: '대한상공회의소', date: '2025. 11.' },
+  { name: '네트워크관리사 2급', org: '한국정보통신자격협회', date: '2024. 07.' },
+  { name: '프로그래밍기능사', org: '한국산업인력공단', date: '2023. 12.' },
 ];
 
 // 기술: 칩을 누르면 스포트라이트에 points 와 이 기술을 쓴 프로젝트가 나옵니다.

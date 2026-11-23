@@ -72,7 +72,12 @@ img { display: block; max-width: 100%; }
   border-color: var(--rule); box-shadow: var(--shadow);
 }
 .pill-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; text-decoration: none; white-space: nowrap; }
-.pill-brand i { width: 12px; height: 12px; background: #F2A900; border: 2px solid currentColor; transform: rotate(45deg); }
+.pill-brand .dot { color: #F2A900; animation: dot-glow 2.4s ease-in-out infinite; }
+@keyframes dot-glow {
+  0%, 100% { opacity: 1; text-shadow: 0 0 0 rgba(242, 169, 0, 0); }
+  50% { opacity: .35; text-shadow: 0 0 10px rgba(242, 169, 0, .8); }
+}
+@media (prefers-reduced-motion: reduce) { .pill-brand .dot { animation: none; } }
 .pill-header nav { display: flex; gap: 6px; margin-left: auto; }
 .pill-header nav a { padding: 8px 14px; border-radius: 999px; font-size: 14.5px; font-weight: 600; letter-spacing: .02em; text-decoration: none; transition: background .2s; }
 .pill-header nav a:hover { background: color-mix(in srgb, currentColor 12%, transparent); }
@@ -209,7 +214,7 @@ img { display: block; max-width: 100%; }
 .sec-head p { color: var(--ink-2); margin-top: 6px; }
 .sub-head { font-size: 18px; margin: 56px 0 18px; color: var(--ink-2); font-weight: 600; }
 
-.certs-section { }
+/* .certs-section { } */
 .cert-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
 .cert-card { position: relative; display: grid; gap: 4px; padding: 22px 24px; border-radius: 14px; background: var(--card); border: 1px solid var(--rule); transition: transform .2s var(--ease), box-shadow .2s; }
 .cert-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }

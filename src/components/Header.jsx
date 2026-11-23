@@ -19,7 +19,7 @@ export default function Header() {
 
   return (
     <header className={`pill-header ${scrolled || !onHome ? 'is-solid' : ''}`}>
-      <Link to="/" className="pill-brand"><i aria-hidden="true" />{profile.nameEn}</Link>
+      <Link to="/" className="pill-brand">YOUNGMIN<span className="dot">.</span>KIM</Link>
       <nav aria-label="주요 메뉴">
         {NAV.map(([id, label]) => <a key={id} href={`#${id}`} onClick={go(id)}>{label}</a>)}
       </nav>
